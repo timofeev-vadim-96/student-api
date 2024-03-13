@@ -3,6 +3,7 @@ package ru.gb.studentapi.dao;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import ru.gb.studentapi.model.Student;
+import ru.gb.studentapi.util.StudentDaoInitializerUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ public class StudentDaoDev implements StudentDao {
 
     public StudentDaoDev() {
         students = new ArrayList<>();
+        StudentDaoInitializerUtil.init(students);
     }
 
     @Override
